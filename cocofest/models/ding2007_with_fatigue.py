@@ -32,18 +32,18 @@ class DingModelPulseWidthFrequencyWithFatigue(DingModelPulseWidthFrequency):
         muscle_name: str = None,
         sum_stim_truncation: int = None,
         is_approximated: bool = False,
-        tauc: float = None,
-        a_rest: float = None,
+        tauc: float = None,  # pas touche
+        a_rest: float = None,  # Scaling factor at rest (force de base) [N/ms] --> 2003
         tau1_rest: float = None,
         km_rest: float = None,
         tau2: float = None,
         pd0: float = None,
         pdt: float = None,
-        a_scale: float = None,
-        alpha_a: float = None,
-        alpha_tau1: float = None,
-        alpha_km: float = None,
-        tau_fat: float = None,
+        a_scale: float = None,  # a Scaller aussi proportionnelement à la section du muscle
+        alpha_a: float = None,  # Fatigue
+        alpha_tau1: float = None,  # Fatigue
+        alpha_km: float = None,  # Fatigue
+        tau_fat: float = None,  # Fatigue
     ):
         super(DingModelPulseWidthFrequencyWithFatigue, self).__init__(
             model_name=model_name,
